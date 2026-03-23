@@ -1,0 +1,31 @@
+services:
+  - type: worker
+    name: xms-bot
+    runtime: docker
+    plan: starter
+    dockerfilePath: ./Dockerfile
+    disk:
+      name: downloads
+      mountPath: /app/downloads
+      sizeGB: 2
+    envVars:
+      - key: BOT_TOKEN
+        sync: false
+      - key: API_ID
+        value: "22484497"
+      - key: API_HASH
+        value: "c38cb053916c47a97590c244663cbaef"
+      - key: OWNER_ID
+        value: "6252997817"
+      - key: ADMINS
+        value: "6252997817"
+      - key: CREDIT
+        value: "𝕞𝕚𝕘𝕙𝕥𝕪 𝕒𝕥𝕠𝕞"
+      - key: THUMBNAILS
+        value: "https://files.catbox.moe/4lwnko.jpg"
+      - key: PYTHONUNBUFFERED
+        value: "1"
+      - key: PYTHONOPTIMIZE
+        value: "1"
+      - key: PYTHONDONTWRITEBYTECODE
+        value: "1"
